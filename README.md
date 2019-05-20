@@ -11,7 +11,7 @@
 
     `sh run_ecg.sh`
     
-- For ecg demo (there are demo data in experiments/ecg/dataset/demo )
+- For ecg demo (there are demo data in experiments/ecg/dataset/demo, the output dir is in experiments/ecg/output/beatgan/ecg/demo )
 
     `sh run_ecg_demo.sh`
 
