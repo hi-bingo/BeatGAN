@@ -15,7 +15,7 @@ from data import normalize
 
 device = torch.device("cpu")
 
-SAVE_DIR="output/beatgan/ecg/demo/"
+SAVE_DIR="output/demo/"
 
 
 
@@ -64,8 +64,8 @@ opt.outf=None
 
 
 model=BeatGAN(opt,None,device)
-model.G.load_state_dict(torch.load('output/beatgan/ecg/model/beatgan_folder_0_G.pkl',map_location='cpu'))
-model.D.load_state_dict(torch.load('output/beatgan/ecg/model/beatgan_folder_0_D.pkl',map_location='cpu'))
+model.G.load_state_dict(torch.load('model/beatgan_folder_0_G.pkl',map_location='cpu'))
+model.D.load_state_dict(torch.load('model/beatgan_folder_0_D.pkl',map_location='cpu'))
 
 
 model.G.eval()
@@ -181,3 +181,5 @@ with torch.no_grad():
 
 
             plt.clf()
+
+print("output files are in:{}".format(SAVE_DIR))

@@ -289,7 +289,8 @@ class BeatGAN_MOCAP:
 
 
     def save_weight_GD(self):
-        save_dir=os.path.join("./output/","model")
+        # save_dir=os.path.join("./output/","model")
+        save_dir="model"
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
         torch.save(self.G.state_dict(),
@@ -298,7 +299,7 @@ class BeatGAN_MOCAP:
                    os.path.join(save_dir,'D.pkl'))
 
     def load(self):
-        save_dir = os.path.join("./output/","model")
+        save_dir = "model"
 
         self.G.load_state_dict(
             torch.load(os.path.join(save_dir, 'G.pkl')))
@@ -326,7 +327,7 @@ class BeatGAN_MOCAP:
         ax.set_yticks([])
         ax.set_xticks(np.arange(0,1.2, 0.2))
         ax.legend()
-        f.savefig(os.path.join("./output/model", "dist.pdf"))
+        f.savefig(os.path.join("./output", "dist.pdf"))
         auc_prc, roc_auc, best_threshold, best_f1=evaluate(y_, y_pred)
         print("ap:{}".format(auc_prc))
         print("auc:{}".format(roc_auc))
@@ -486,14 +487,14 @@ class BeatGAN_MOCAP:
                                                          subplot_spec=outer[i], hspace=0.1)
 
                 ax_inner_0 = plt.Subplot(fig, inner[0])
-                fig_walk= mpimg.imread("./output/model/fig_walk.png")
+                fig_walk= mpimg.imread("model/fig_walk.png")
                 ax_inner_0.imshow(fig_walk,aspect="auto")
                 ax_inner_0.set_yticks([])
                 ax_inner_0.set_xticks([])
                 fig.add_subplot(ax_inner_0)
 
                 ax_inner_1 = plt.Subplot(fig, inner[1])
-                fig_run=mpimg.imread("./output/model/fig_run.png")
+                fig_run=mpimg.imread("model/fig_run.png")
                 ax_inner_1.imshow(fig_run,aspect="auto")
                 ax_inner_1.set_yticks([])
                 ax_inner_1.set_xticks([])
@@ -526,7 +527,7 @@ class BeatGAN_MOCAP:
         # fig.tight_layout()
         # fig.show()
         # return
-        fig.savefig("./output/model/pic_run.pdf")
+        fig.savefig("./output/pic_run.pdf")
         plt.clf()
         plt.close()
 

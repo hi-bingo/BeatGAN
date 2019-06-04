@@ -13,6 +13,8 @@ torch.cuda.is_available() else "cpu")
 
 
 
+if not os.path.exists("output"):
+    os.mkdir("output")
 
 
 dataloader=load_data()
