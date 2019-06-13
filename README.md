@@ -1,6 +1,7 @@
 
 ## Overview
 This is the implementation for the BeatGAN model architecture described in the paper: "BeatGAN: Anomalous Rhythm Detection using Adversarially Generated Time Series".
+
 In this paper, we propose an unsupervised anomaly detection algorithm for time series data. BeatGAN has the following advantages: 1) Unsupervised: it is applicable even when labels are unavailable; 2) Effectiveness: It outperforms baselines in both accuracy and inference speed, achieving accuracy of nearly 0.95 AUC on ECG data and very fast inference (2.6 ms per beat); 3) Explainability: It pinpoints the time ticks involved in the anomalous patterns, providing interpretable output for visualization and attention routing; 4) Generality: BeatGAN also successfully detects unusual moions in multivariate motion-capture database.
 
 
@@ -36,12 +37,14 @@ In this paper, we propose an unsupervised anomaly detection algorithm for time s
 - matplotlib (3.0.2)
 
 
-##Reference
+## Reference
 If you find this code useful in your research, please, consider citing our paper:
 
+``` latex
 @inproceedings{zhou2019beatgan,
   title={BeatGAN: Anomalous Rhythm Detection using Adversarially Generated Time Series},
   author={Zhou, Bin and Liu, Shenghua and Bryan Hooi and Cheng, Xueqi and Ye, Jing },
   booktitle={International Joint Conference on Artificial Intelligence},
   year={2019},
 }
+```
